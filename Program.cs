@@ -8,14 +8,16 @@ namespace DesignPatterns
         {
             #region STRATEGY PATTERN
 
-            TestStrategyPattern testStrategyPattern = new TestStrategyPattern();
-
-            testStrategyPattern.MakeTaxationTest();
-            testStrategyPattern.MakeInvestmentsTest();
+            //TestStrategyPattern.MakeTaxationTest();
+            //TestStrategyPattern.MakeInvestmentsTest();
 
             #endregion
 
+            #region CHAIN OF RESPONSABILITY PATTERN
 
+            TestChainOfResponsibilityPattern.MakeDiscountTest();
+
+            #endregion
 
         }
     }

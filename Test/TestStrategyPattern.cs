@@ -11,14 +11,15 @@ namespace DesignPatterns.Test
 {
     public class TestStrategyPattern
     {
-        public void MakeTaxationTest()
+        public static void MakeTaxationTest()
         {
             Console.WriteLine("--------------------------------------------- STRATEGY PATTERN TAX EXAMPLE ---------------------------------------------");
             WriteTools.AddRow();
 
-            Budget budget = new Budget(1000);
+            Account account = new Account();
+            account.Balance = 500;
 
-            Console.WriteLine($"Creating {nameof(budget)} and adding ${budget.Value} balance.");
+            Console.WriteLine($"Creating {nameof(account)} and adding ${account.Balance} balance.");
             WriteTools.AddRow();
 
             ITaxation iss = new ISS();
@@ -30,18 +31,18 @@ namespace DesignPatterns.Test
             TaxCalculator calculator = new TaxCalculator();
 
             Console.WriteLine($"Applying {nameof(icms).ToUpperInvariant()} fee.");
-            calculator.PerformsCalculation(budget, icms);
+            calculator.PerformsCalculation(account, icms);
             WriteTools.AddRow();
 
             Console.WriteLine($"Applying {nameof(iss).ToUpperInvariant()} fee.");
-            calculator.PerformsCalculation(budget, iss);
+            calculator.PerformsCalculation(account, iss);
             WriteTools.AddRow();
             WriteTools.AddRow();
 
             Console.Read();
         }
 
-        public void MakeInvestmentsTest()
+        public static void MakeInvestmentsTest()
         {
             Console.WriteLine("------------------------------------------ STRATEGY PATTERN INVESTMENT EXAMPLE -----------------------------------------");
             WriteTools.AddRow();

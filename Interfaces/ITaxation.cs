@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using DesignPatterns.Entities;
 
 namespace DesignPatterns
 {
     public interface ITaxation
     {
-        double Calculator(Budget budget);
+        double Calculator(Account account);
     }
 }
